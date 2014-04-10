@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/03/2014 01:45:44 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class catalog="compras" name="dominio.Cotacao" table="cotacao">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="dominio.Compra" fetch="select" name="compra">
+      <column name="compra_id"/>
+    </many-to-one>
+    <property name="fornecedorId" type="java.lang.Integer">
+      <column name="fornecedor_id"/>
+    </property>
+    <property name="selecionado" type="java.lang.Boolean">
+      <column name="selecionado"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="cotacaoMaterials" table="cotacao_material">
+      <key>
+        <column name="cotacao_id"/>
+      </key>
+      <one-to-many class="dominio.CotacaoMaterial"/>
+    </set>
+  </class>
+</hibernate-mapping>

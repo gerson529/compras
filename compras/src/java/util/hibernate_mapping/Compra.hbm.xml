@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/03/2014 01:45:44 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class catalog="compras" name="dominio.Compra" table="compra">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="dataPrazo" type="date">
+      <column length="10" name="data_prazo"/>
+    </property>
+    <property name="notaFiscal" type="string">
+      <column length="45" name="nota_fiscal"/>
+    </property>
+    <property name="status" type="java.lang.Short">
+      <column name="status"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="compraMaterials" table="compra_material">
+      <key>
+        <column name="compra_id"/>
+      </key>
+      <one-to-many class="dominio.CompraMaterial"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="cotacaos" table="cotacao">
+      <key>
+        <column name="compra_id"/>
+      </key>
+      <one-to-many class="dominio.Cotacao"/>
+    </set>
+  </class>
+</hibernate-mapping>
