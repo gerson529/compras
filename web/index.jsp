@@ -23,6 +23,9 @@
             <li>
                 <a href="material/index.jsp">Material</a>
             </li>
+            <li>
+                <a href="SolicitacaoCompra/index.jsp">Pedido de Compra</a>
+            </li>
         </ul>
     </body>
 </html>

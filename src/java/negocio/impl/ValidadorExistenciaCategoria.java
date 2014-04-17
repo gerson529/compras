@@ -5,8 +5,6 @@ import dao.IDAO;
 import dao.impl.CategoriaDAO;
 import dominio.EntidadeDominio;
 
-
-
 public class ValidadorExistenciaCategoria extends AbstractValidador {
 
 	

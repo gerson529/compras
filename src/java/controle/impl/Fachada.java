@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import negocio.ICommand;
 import negocio.impl.ValidadorExistenciaCategoria;
+import negocio.impl.ValidadorExistenciaCompra;
 import negocio.impl.ValidadorExistenciaMaterial;
 
 /**
@@ -55,25 +56,25 @@ public class Fachada implements IFachada {
 		//
 		// CATEGORIA
 		//
-		daos.put(Categoria.class.getName(), new CategoriaDAO());
+	daos.put(Categoria.class.getName(), new CategoriaDAO());
         List<ICommand> rnsCategoria = new ArrayList<ICommand>();
-	    rnsCategoria.add(new ValidadorExistenciaCategoria());
+	rnsCategoria.add(new ValidadorExistenciaCategoria());
         rns.put(Categoria.class.getName(), rnsCategoria);
 		
 		//
 		// COMPRA
 		//
-		daos.put(Compra.class.getName(), new CompraDAO());
+        daos.put(Compra.class.getName(), new CompraDAO());
         List<ICommand> rnsCompra = new ArrayList<ICommand>();
-	    //rnsCompra.add(new ValidadorExistenciaCompra());
+        rnsCompra.add(new ValidadorExistenciaCompra());
         rns.put(Compra.class.getName(), rnsCompra);
 		
 		//
-		// Cotacao
+		// COTACAO
 		//
-		daos.put(Cotacao.class.getName(), new CotacaoDAO());
+	daos.put(Cotacao.class.getName(), new CotacaoDAO());
         List<ICommand> rnsCotacao = new ArrayList<ICommand>();
-	    //rnsCompra.add(new ValidadorExistenciaCompra());
+	//rnsCompra.add(new ValidadorExistenciaCompra());
         rns.put(Cotacao.class.getName(), rnsCotacao);
 
     }

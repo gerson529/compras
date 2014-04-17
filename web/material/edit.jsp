@@ -34,7 +34,7 @@
 		<input type='hidden' name='cmd' value='ATUALIZAR'/>
 		Cod. Material: <input type='text' name='material_id' value='<%=material.getId()%>' readonly='readonly' /> <br/>
 		Nome: <input type='text' name='nome' value='<%=material.getNome()%>' /> <br/>
-		Cateogira: <select name='categoria_id' required>
+		Categoria: <select name='categoria_id' required>
 			<option value=''>[ Selecione uma Categoria]</option>
 			<%=options%>
 		</select><br>

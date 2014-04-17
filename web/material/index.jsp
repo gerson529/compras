@@ -28,7 +28,7 @@
             <input type="hidden" name="encaminhar" value="ActionMaterial"/>
             <input type="hidden" name="metodo" value="cadastrar"/>
             Nome: <input type="text" name="nome" value="" required="required"/> <br/>
-            Cateogira: <select name="categoria_id" required>
+            Categoria: <select name="categoria_id" required>
                 <option value=''>[ Selecione uma Categoria]</option>
             <%
                 
